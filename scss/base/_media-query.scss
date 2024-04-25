@@ -1,0 +1,48 @@
+$small: 300px;
+$medium: 900px;
+$mediumx:590px;
+$smallx:362px;
+$smallxx:351px;
+.smth {
+//some CSS
+@media screen and (max-width: $medium) {
+    .contactoE {
+        display: grid;
+        padding: 0
+    }
+    div.containerF{
+        grid-template-columns: repeat(2, 4fr);
+        display: inline-flexbox;
+        justify-content: flex-start;
+      }
+//do Smth
+}
+@media screen and (max-width: $mediumx) {
+//do Smth
+.contactoE {
+    justify-content: center;
+  }
+
+  div.containerF {
+    grid-template-columns: repeat(1, 4fr);
+    display: inline-flexbox;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: $smallx) {
+    .contactoE {
+        justify-content: center;
+        grid-area: auto;
+    
+        div.containerF {
+          --bs-body-line-height: 0;
+          grid-area: auto;
+        }
+    }
+}
+@media screen and (max-width: $smallxx) {
+    .div.input-container.name {
+        width: 20px;
+      }
+}
+}

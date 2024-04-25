@@ -37,7 +37,7 @@ body {
 header {
   width: 100%;
   height: 650px;
-  background-image: url(/img/encabezado.jpg);
+  background:linear-gradient(rgba(49, 46, 112, 0.522), rgba(53, 53, 130, 0.911) ) , url(/img/encabezado.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -118,7 +118,7 @@ header .subtitulo {
   margin-bottom: 10px;
   font-weight: 600;
   color: transparent;
-  background-image: url(/img/cropped-lawyer-montreal-legal-help.jpg);
+  background: url(/img/cropped-lawyer-montreal-legal-help.jpg);
   background-size: cover;
   background-position-y: 700px;
   background-clip: text;
@@ -218,6 +218,7 @@ header .subtitulo {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  clip-path: polygon( 27% 2%99% 2%100% 60%99% 97%1% 98%0 57%0 26%); 
 }
 
 .cards .card {
@@ -225,6 +226,7 @@ header .subtitulo {
   padding: 30px;
   margin: 10px;
   box-shadow: 5px 5px 20px black;
+  
 }
 
 .cards .card img {
@@ -234,6 +236,7 @@ header .subtitulo {
   margin-bottom: 80px;
   /*border-style: none none groove;*/
   transition: background-color 0.5s ease;
+  
 }
 
 .card h4 {
