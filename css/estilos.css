@@ -168,6 +168,7 @@ header .textos sesgoabajo {
 }
 header span.navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%288, 0, 0, 9.00%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  color: yellow;
 }
 header button.navbar-toggler {
   color: white;
@@ -309,7 +310,6 @@ main .cards {
 @media (min-width: 350px) and (max-width: 899px) {
   main .cards {
     flex-direction: column;
-    
   }
 }
 main .cards .card {
