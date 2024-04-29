@@ -34,6 +34,12 @@ div.fixed a img {
   z-index: 10;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 header {
   width: 100%;
   height: 650px;
@@ -49,12 +55,88 @@ header {
           clip-path: polygon(0 0, 100% 0, 100% 64%, 0 79%);
   z-index: 1;
 }
+@media screen and (min-width: 350px) and (max-width: 552px) {
+  header {
+    width: 100%;
+    height: 100vh;
+  }
+}
+@media (min-width: 350px) and (max-width: 1200px) {
+  header .navbar {
+    color: transparent;
+    position: sticky;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 552px) {
+  header .navbar .container-fluid {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 599px) {
+  header .navbar .container-fluid {
+    justify-content: center;
+  }
+}
+@media (min-width: 598px) and (max-width: 789px) {
+  header .navbar .container-fluid {
+    justify-content: center;
+  }
+}
+@media (min-width: 790px) {
+  header .navbar .container-fluid {
+    justify-content: center;
+  }
+}
 header .textos {
   margin-top: 152px;
+}
+@media (min-width: 350px) and (max-width: 672px) {
+  header .textos {
+    margin-top: 20px;
+  }
 }
 header .textos h1 {
   padding: 0;
   font-size: 80px;
+}
+@media (min-width: 666px) and (max-width: 700px) {
+  header .textos h1 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 599px) {
+  header .textos h1 {
+    font-size: 45px;
+  }
+  header .textos h1 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 599px) and (max-width: 790px) {
+  header .textos h1 {
+    font-size: 45px;
+  }
+}
+@media (min-width: 790px) {
+  header .textos h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+  }
+}
+@media (min-width: 900px) {
+  header .textos h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 55px;
+  }
+}
+@media (min-width: 1200px) {
+  header .textos h1 {
+    font-size: 80px;
+  }
 }
 header .textos h3 {
   font-size: 42px;
@@ -84,12 +166,24 @@ header .textos sesgoabajo {
   border-style: solid;
   border-color: transparent transparent #fff transparent;
 }
+header span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%288, 0, 0, 9.00%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+header button.navbar-toggler {
+  color: white;
+  border: 1px solid white;
+}
 
+main html, main body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 main .contenedor {
   text-align: center;
   padding: 10px;
   width: 90%;
-  max-width: 1000px;
+  max-width: 100%;
   margin: auto;
   margin-top: 6px;
   overflow: hidden;
@@ -202,44 +296,52 @@ main .sesgoabajo {
 main .miembros {
   display: flex;
 }
-main .miembros .contenedor .cards {
+main .miembros .contenedor {
+  flex-direction: column;
+}
+main .cards {
   justify-content: space-around;
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
 }
-main .miembros .contenedor .card {
+@media (min-width: 350px) and (max-width: 899px) {
+  main .cards {
+    flex-direction: column;
+  }
+}
+main .cards .card {
   position: relative;
   padding: 30px;
   margin: 10px;
   box-shadow: 5px 5px 20px black;
 }
-main .miembros .contenedor .card:hover {
+main .cards .card:hover {
   cursor: pointer;
 }
-main .miembros .contenedor .card:hover .intro {
+main .cards .card:hover .intro {
   height: 180px;
   bottom: 0px;
   background: rgba(181, 118, 46, 0.345);
 }
-main .miembros .contenedor .card:hover p {
+main .cards .card:hover p {
   opacity: 100;
   visibility: visible;
 }
-main .miembros .contenedor .card:hover img {
+main .cards .card:hover img {
   transform: rotate(-2deg);
   transform: scale(1.1) rotate(0deg);
   transform: scale(1.2);
 }
-main .miembros .contenedor .card img {
+main .cards .card img {
   align-items: center;
   width: 250px;
   height: 250px;
   margin-bottom: 80px;
   transition: background-color 0.5s ease;
 }
-main .miembros .contenedor .card .intro {
+main .cards .card .intro {
   height: 70px;
   width: 310px;
   padding: 10px;
@@ -252,26 +354,33 @@ main .miembros .contenedor .card .intro {
   color: white;
   transition: 0.5s;
 }
-main .miembros .contenedor .card .intro .h4 {
+main .cards .card .intro .h4 {
   font-size: 500px;
   padding: 0;
 }
-main .miembros .contenedor .card .intro .div {
+main .cards .card .intro .div {
   height: 120px;
 }
-main .miembros .contenedor .card .intro p.tarjeta {
+main .cards .card .intro p.tarjeta {
   font-size: 15px;
   margin: 0px;
   visibility: hidden;
   opacity: 0;
 }
-main .containerGB p {
+@media (min-width: 350px) and (max-width: 590px) {
+  main .containerGB .div .row {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+main .containerGB .div .row p {
   letter-spacing: 1px;
 }
-main .containerGB img {
+main .containerGB .div .row img {
   transition: all 0.5s ease-in-out;
 }
-main .containerGB img:hover {
+main .containerGB .div .row img:hover {
   -webkit-transform: rotateY(180deg);
   -webkit-transform-style: preserve-3d;
   transform: rotateY(180deg);
@@ -289,13 +398,36 @@ footer .contactoE {
   background: rgba(5, 28, 88, 0.8862745098);
   color: #fff;
 }
-footer .contactoE .containerF {
+@media screen and (max-width: 599px) {
+  footer .contactoE {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  footer .contactoE {
+    display: grid;
+    padding: 0px;
+  }
+}
+footer .contactoE div.containerF {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr;
   grid-gap: 10px;
 }
-footer .contactoE .containerF .sec h2 {
+@media (min-width: 350px) and (max-width: 599px) {
+  footer .contactoE div.containerF {
+    grid-template-columns: repeat(1, 4fr);
+  }
+}
+@media (min-width: 599px) and (max-width: 992px) {
+  footer .contactoE div.containerF {
+    grid-template-columns: repeat(2, 4fr);
+    display: inline-flexbox;
+    justify-content: flex-start;
+  }
+}
+footer .contactoE div.containerF .sec h2 {
   position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -304,13 +436,13 @@ footer .contactoE .containerF .sec h2 {
   font-family: sans-serif;
   text-decoration: none;
 }
-footer .contactoE .containerF .sec h2:hover {
+footer .contactoE div.containerF .sec h2:hover {
   text-decoration: underline;
   border-bottom: 2px;
   text-underline-offset: 10px;
   color: #cfcf0a;
 }
-footer .contactoE .containerF .sec .sci {
+footer .contactoE div.containerF .sec .sci {
   padding: 0;
   margin-top: 20px;
   display: grid;
@@ -318,7 +450,7 @@ footer .contactoE .containerF .sec .sci {
   grid-gap: 5px;
   align-items: center;
 }
-footer .contactoE .containerF .sec .sci li {
+footer .contactoE div.containerF .sec .sci li {
   list-style: none;
   text-align: center;
   width: 30px;
@@ -329,17 +461,17 @@ footer .contactoE .containerF .sec .sci li {
   text-decoration: none;
   border-radius: 4px;
 }
-footer .contactoE .containerF .sec .sci li i:hover {
+footer .contactoE div.containerF .sec .sci li .i:hover {
   color: #fff;
 }
-footer .contactoE .containerF .sec .sci li:nth-child(1) {
+footer .contactoE div.containerF .sec .sci li:nth-child(1) {
   color: #fff;
   font-size: 20px;
 }
-footer .contactoE .containerF .sec .sci li:nth-child(1):hover {
+footer .contactoE div.containerF .sec .sci li:nth-child(1):hover {
   color: #f5f102;
 }
-footer .contactoE .containerF .sec .fa {
+footer .contactoE div.containerF .sec .fa {
   color: #fff;
   width: 50px;
   height: 50px;
@@ -376,47 +508,10 @@ footer .contactoE .containerF .sec .fa {
   color: #fff;
   font-size: 20px;
 }
-.sec contact .info li li p a {
+.sec contact .info li span p a {
   color: #fff;
   text-decoration: none;
 }
-.sec contact .info li li p a:hover {
+.sec contact .info li span p a:hover {
   color: #fdfd01;
-}
-
-@media screen and (max-width: 900px) {
-  .smth .contactoE {
-    display: grid;
-    padding: 0;
-  }
-  .smth div.containerF {
-    grid-template-columns: repeat(2, 4fr);
-    display: inline-flexbox;
-    justify-content: flex-start;
-  }
-}
-@media screen and (max-width: 590px) {
-  .smth .contactoE {
-    justify-content: center;
-  }
-  .smth div.containerF {
-    grid-template-columns: repeat(1, 4fr);
-    display: inline-flexbox;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 362px) {
-  .smth .contactoE {
-    justify-content: center;
-    grid-area: auto;
-  }
-  .smth .contactoE div.containerF {
-    --bs-body-line-height: 0;
-    grid-area: auto;
-  }
-}
-@media screen and (max-width: 351px) {
-  .smth .div.input-container.name {
-    width: 20px;
-  }
 }/*# sourceMappingURL=estilos.css.map */

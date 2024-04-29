@@ -1,3 +1,18 @@
+@mixin mini-cel {
+    @media screen and (min-width: 350px) and (max-width: 552px) {@content; }
+   }
+@mixin para-cel {
+    @media screen and (max-width: 599px) { @content; }
+  }
+  @mixin para-tablet {
+    @media screen and (max-width: 790px) { @content; }
+  }
+  @mixin para-tablet-larga {
+    @media screen and (max-width: 992px) { @content; }
+  }
+  @mixin para-escritorio {
+    @media screen and (max-width: 1200px) { @content; }
+  }
 footer{
     .contactoE{
         display: grid;
@@ -9,11 +24,29 @@ footer{
         padding: 50px 100x;
         background: #051c58e2;
         color: #fff;
-        .containerF{
+            @include para-cel(){
+                justify-content: center;
+            }
+            @include para-tablet-larga() { 
+                display: grid;
+                padding: 0px;
+            }
+        div.containerF{
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 2fr;
             grid-gap: 10px;
+            
+            @media (min-width: 350px) and (max-width: 599px){
+                grid-template-columns: repeat(1, 4fr);
+            }
+             
+            @media (min-width: 599px) and (max-width: 992px){
+                grid-template-columns: repeat(2, 4fr);
+                display: inline-flexbox;
+                justify-content: flex-start;
+            }
+            
             .sec {
                 h2{
                     position: relative;
@@ -30,9 +63,7 @@ footer{
                         color: #cfcf0a
                     }
                 }
-                p{
-
-                }
+                
                 .sci{
                     padding: 0;
                     margin-top: 20px;
@@ -50,7 +81,7 @@ footer{
                             align-items: center;
                             text-decoration: none;
                             border-radius: 4px;
-                                i{
+                                .i{
                                     &:hover{
                                     color: #fff;
 }                                }
@@ -74,9 +105,7 @@ footer{
             }
               .quicklins{
                 position: relative;
-                h2{
-
-                }
+               
                 ul{
                     li{
                         list-style: none;
@@ -93,9 +122,7 @@ footer{
                 }
             }
             .sec contact{
-                h2{
-
-                }
+               
                 .info{
                     position: relative;
                     li{
@@ -108,19 +135,7 @@ footer{
                                     color: #fff;
                                     font-size: 20px;
                                 }
-                            i{
-
-                            }
-                        }
-                        span{
-
-                        }
-                    li{
-                        span{
-                            i{
-
-                            }
-                        }    
+                          
                         p{
                             a{
                                 color: #fff;
