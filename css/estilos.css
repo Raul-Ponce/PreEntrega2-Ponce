@@ -309,6 +309,7 @@ main .cards {
 @media (min-width: 350px) and (max-width: 899px) {
   main .cards {
     flex-direction: column;
+    
   }
 }
 main .cards .card {
